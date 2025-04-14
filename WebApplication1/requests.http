@@ -1,5 +1,33 @@
 GET http://localhost:5198
 
+####
+GET http://localhost:5198/users/1/posts/buffalo
+
+###
+GET http://localhost:5198/products/10
+
+
+###
+GET http://localhost:5198/products/mobile-phone/324245
+
+
+###
+GET http://localhost:5198/files/images/cats/cat_1.jpg
+
+
+
+###
+GET http://localhost:5198/search?q=dotnet&page=2
+
+###
+GET http://localhost:5198/store/electronics/123/onSale
+
+
+###
+GET http://localhost:5198/store/electronics/sale?inStock=true
+
+
+
 
 ####
 GET http://localhost:5198/downloads
