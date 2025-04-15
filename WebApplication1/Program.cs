@@ -1,7 +1,26 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+var blogs = new List <Blog>
+{
+    new Blog { Title = "My first blog", Body = "Blog 1"},
+    new Blog { Title = "My second blog", Body = "Blog 2"},
+    new Blog { Title = "My third blog", Body = "Blog 3"},
+};
+
 app.MapGet("/", () => "Root path!");
+app.MapGet("blogs", ( ) => blogs);
+app.MapGet("blogs/{id}", (int id ) => {
+    if (id < 0 || id >= blogs.Count){
+        return Results.NotFound();
+    } else {
+    return Results.Ok(blogs[id]);
+    };
+    });
+app.MapPost("/blogs", (Blog blog) => {
+    blogs.Add(blog);
+    return Results.Created($"/blogs/{blogs.Count - 1}", blog);
+});
 app.MapGet("/downloads", () => "Downloads!");
 app.MapPut("/", () => "This is a put!");
 app.MapDelete("/", () => "This is a delete!");
@@ -31,3 +50,8 @@ app.MapGet("/store/{category}/{productId:int?}/{*extraPath}", (string category, 
 });
 app.Run();
  
+ public class Blog
+ {
+    public required string Title { get; set; }
+    public required string Body { get; set; }
+ }

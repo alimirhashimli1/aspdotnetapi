@@ -3,6 +3,14 @@ GET http://localhost:5198
 ####
 GET http://localhost:5198/users/1/posts/buffalo
 
+####
+GET http://localhost:5198/blogs
+
+
+####
+GET http://localhost:5198/blogs/4
+
+
 ###
 GET http://localhost:5198/products/10
 
