@@ -11,6 +11,20 @@ GET http://localhost:5198/blogs
 GET http://localhost:5198/blogs/4
 
 
+
+####
+POST http://localhost:5198/blogs
+Content-Type: application/json
+
+{
+    "title": "My fourth blog",
+    "body": "This is my fourth blog"
+}
+
+###
+DELETE http://localhost:5198/blogs/0
+
+
 ###
 GET http://localhost:5198/products/10
 

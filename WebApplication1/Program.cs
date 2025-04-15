@@ -17,12 +17,23 @@ app.MapGet("blogs/{id}", (int id ) => {
     return Results.Ok(blogs[id]);
     };
     });
+
 app.MapPost("/blogs", (Blog blog) => {
     blogs.Add(blog);
     return Results.Created($"/blogs/{blogs.Count - 1}", blog);
 });
+
+app.MapDelete("/blogs/{id}", (int id) => {
+    if (id < 0 || id >= blogs.Count){
+        return Results.NotFound();
+    } else {
+        blogs.RemoveAt(id);
+    return Results.NoContent();
+    };
+});
+
 app.MapGet("/downloads", () => "Downloads!");
-app.MapPut("/", () => "This is a put!");
+app.MapPut("/", () => "This is a put!"); 
 app.MapDelete("/", () => "This is a delete!");
 app.MapPost("/", () => "This is a POst!");
 app.MapGet("/users/{userId}/posts/{slug}", (int userId, string slug) => {
