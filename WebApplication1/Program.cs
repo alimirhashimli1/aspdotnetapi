@@ -1,5 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpLogging((o) => {});
+
+
 var app = builder.Build();
+
+app.UseHttpLogging();
+app.Use(async (context, next) => {
+    Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
+    await next.Invoke();
+    Console.WriteLine($"Response: {context.Response.StatusCode}");
+});
 
 var blogs = new List <Blog>
 {
@@ -9,6 +19,7 @@ var blogs = new List <Blog>
 };
 
 app.MapGet("/", () => "Root path!");
+app.MapGet("/hello", () => "This is a hello !");
 app.MapGet("blogs", ( ) => blogs);
 app.MapGet("blogs/{id}", (int id ) => {
     if (id < 0 || id >= blogs.Count){
@@ -29,6 +40,15 @@ app.MapDelete("/blogs/{id}", (int id) => {
     } else {
         blogs.RemoveAt(id);
     return Results.NoContent();
+    };
+});
+
+app.MapPut("/blogs/{id}", (int id, Blog blog) => {
+    if (id < 0 || id >= blogs.Count){
+        return Results.NotFound();
+    } else {
+    blogs[id] = blog;
+    return Results.Ok(blog);
     };
 });
 
