@@ -1,15 +1,29 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpLogging((o) => {});
-
+builder.Services.AddControllers();
 
 var app = builder.Build();
+// app.UseHttpLogging();
 
-app.UseHttpLogging();
+// app.UseRouting();
+// app.UseAuthentication();
+// app.UseAuthorization();
+// app.UseExceptionHandler();
+
 app.Use(async (context, next) => {
-    Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
-    await next.Invoke();
-    Console.WriteLine($"Response: {context.Response.StatusCode}");
+    Console.WriteLine("Logic before 1");
+    Console.WriteLine("Logic after 1");
+        await next.Invoke();
+
 });
+
+if(app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+};
+
+// app.UseEndpoints();
 
 var blogs = new List <Blog>
 {
