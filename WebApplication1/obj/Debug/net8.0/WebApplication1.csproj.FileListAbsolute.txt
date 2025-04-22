@@ -24,3 +24,10 @@ C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.
 C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
 C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alimi\Desktop\webdev\basic-api-endpoint\WebApplication1\obj\Debug\net8.0\WebAppli.7D14BD69.Up2Date

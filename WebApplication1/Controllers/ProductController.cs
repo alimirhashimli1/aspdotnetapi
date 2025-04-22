@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-[Route("api/[controller]")]
+[Route("api/products")]
 [ApiController]
 public class ProductController : ControllerBase
 {
